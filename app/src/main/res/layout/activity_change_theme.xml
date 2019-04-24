@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_weight="0.8"
+    android:background="#000000"
+    >
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_weight="0.8"
+        >
+
+    <Button
+        android:id="@+id/button_color_blue"
+        style="@style/ButtonColor_Blue"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/bg_circle_color_blue"
+        android:onClick="OnClickButtonBlue"
+         />
+
+    <Button
+        android:id="@+id/button_color_maroon"
+        style="@style/ButtonColor_Maroon"
+        android:layout_width="70dp"
+        android:layout_height="72dp"
+        android:background="@drawable/bg_circle_color_maroon"
+        android:onClick="OnClickButtonMaroon"
+         />
+
+    <Button
+        android:id="@+id/button_color_green"
+        style="@style/ButtonColor_Green"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/bg_circle_color_green"
+        android:onClick="OnClickButtonGreen"
+
+         />
+
+    <Button
+        android:id="@+id/button_color_skyblue"
+        style="@style/ButtonColor_SkyBlue"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/bg_circle_color_skyblue"
+        android:onClick="OnClickButtonSkyBlue"
+        />
+
+    <Button
+        android:id="@+id/button_color_navyblue"
+        style="@style/ButtonColor_NavyBlue"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/bg_circle_color_navy_blue"
+        android:onClick="OnClickButtonNavyBlue"
+         />
+    </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="0.15">
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="119dp"
+        android:layout_gravity="bottom"
+        android:layout_weight="0.15"
+        android:background="#000000"
+        app:itemIconSize="24dp"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_items"
+        />
+</LinearLayout>
+</LinearLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.myapplication">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".academic.AcademicActivity" android:label="Academic Activity" android:windowSoftInputMode="stateHidden|adjustResize" android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.myapplication.MainActivity" />
+        </activity>
+        <activity android:name=".journal.AddNoteActivity" android:label="Journal Activity" android:windowSoftInputMode="stateHidden|adjustResize" android:parentActivityName=".journal.JournalActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.myapplication.journal.JournalActivity" />
+        </activity>
+        <activity android:name=".theme.ChangeThemeActivity" android:label="Change Theme Activity" android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.myapplication.MainActivity" />
+        </activity>
+        <activity android:name=".personal.PersonalActivity" android:windowSoftInputMode="stateHidden|adjustResize" android:label="Personal Activity" android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.myapplication.MainActivity" />
+        </activity>
+        <activity android:name=".personal.AddGoalPersonalActivity" android:windowSoftInputMode="stateHidden|adjustResize" android:label="Goal Activity" android:parentActivityName=".personal.PersonalActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.myapplication.personal.PersonalActivity" />
+        </activity>
+        <activity android:name=".journal.JournalActivity" android:windowSoftInputMode="stateHidden|adjustResize" android:label="Journal Activity" android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.myapplication.MainActivity" />
+        </activity>
+
+        <activity android:name=".academic.AddNewReminderAcademicActivity" android:windowSoftInputMode="stateHidden|adjustResize" android:label="Add Task Activity" android:parentActivityName=".academic.AcademicActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.myapplication.academic.AcademicActivity" />
+        </activity>
+        <activity android:name=".academic.AddClassAcademicActivity" android:windowSoftInputMode="stateHidden|adjustResize" android:label="Add Task Activity" android:parentActivityName=".academic.AcademicActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.myapplication.academic.AcademicActivity" />
+        </activity>
+        <activity android:name=".academic.AddReminderAcademicActivity" android:windowSoftInputMode="stateHidden|adjustResize" android:label="Add Task Activity" android:parentActivityName=".academic.AcademicActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.myapplication.academic.AcademicActivity" />
+        </activity>
+        <activity android:name=".academic.AddAssignmentActivity" android:windowSoftInputMode="stateHidden|adjustResize" android:label="Add Task Activity" android:parentActivityName=".academic.AcademicActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.myapplication.academic.AcademicActivity" />
+        </activity>
+        <activity android:name=".academic.AddExamActivity" android:windowSoftInputMode="stateHidden|adjustResize" android:label="Add Task Activity" android:parentActivityName=".academic.AcademicActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.myapplication.academic.AcademicActivity" />
+        </activity>
+        <activity android:name=".personal.AddTaskPersonalActivity" android:windowSoftInputMode="stateHidden|adjustResize" android:label="Add Task Activity" android:parentActivityName=".personal.PersonalActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.myapplication.personal.PersonalActivity" />
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="action_settings">Settings</string>
+    <string name="academic_calendar">Academic Calendar</string>
+    <string name="personal_calendar">Personal Calendar</string>
+    <string name="journal">Journal</string>
+    <string name="tasks">No Tasks For Today</string>
+    <string name="addtasks">Tasks</string>
+    <string name="plus">+</string>
+    <string name="save">Save</string>
+    <string name="due_date">Due Date</string>
+    <string name="start_date">Start Date</string>
+    <string name="pick_date">Pick date</string>
+    <string name="date">date</string>
+    <string name="new_task">New Task</string>
+    <string name="add_note">Add Note</string>
+    <string name="add_class">Class</string>
+    <string name="exam">Exam</string>
+    <string name="assignment">Assignment</string>
+    <string name="add_reminder">Reminder</string>
+    <string name="monday">Mon</string>
+    <string name="tuesday">Tues</string>
+    <string name="wednesday">Wed</string>
+    <string name="thursday">Thur</string>
+    <string name="friday">Fri</string>
+    <string name="saturday">Sat</string>
+    <string name="sunday">Sun</string>
+    <string name="high">High</string>
+    <string name="medium">Medium</string>
+    <string name="low">Low</string>
+    <string name="priority">Priority  </string>
+    <string name="goal">Goal</string>
+    <string name="event">Event</string>
+    <string name="new_event">New Event</string>
+    <string name="new_goal">New Goal</string>
+
+</resources>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center" android:background="@color/colorSelected1"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:background="@color/colorSelected1"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"
+        />
+
+    <ListView
+        android:id="@+id/user_list"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:divider="@color/white"
+        android:layout_weight="1"
+        android:dividerHeight="1dp" />
+        <Button
+            android:id="@+id/journalButton"
+            android:text="@string/add_note"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/bg_calendar"
+            android:textSize="20sp"
+            android:padding="10sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="addNote"
+            />
+    <android.support.design.widget.BottomNavigationView
+        app:itemIconSize="24dp"
+        app:labelVisibilityMode="labeled"
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.15"
+        android:layout_gravity="bottom"
+        app:menu="@menu/bottom_nav_items"
+        android:background="#000000"/>
+</LinearLayout>

@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/academic_calendar_menu"
+        android:title="@string/academic_calendar"
+        android:icon="@drawable/ic_academic"
+        android:tooltipText="@string/academic_calendar"/>
+    <item
+        android:id="@+id/personal_calendar_menu"
+        android:title="@string/personal_calendar"
+        android:icon="@drawable/ic_personal"
+        android:tooltipText="@string/personal_calendar"/>
+       <!-- android:icon="@drawable/ic_search_black"
+        />-->
+
+    <item
+        android:id="@+id/journal_menu"
+        android:title="@string/journal"
+        android:icon="@drawable/ic_journal"
+        android:tooltipText="@string/journal"/>
+
+    <item
+        android:id="@+id/change_theme_menu"
+        android:title="Change Theme"
+        android:icon="@drawable/ic_change_theme"
+        android:tooltipText="change theme"/>
+
+</menu>

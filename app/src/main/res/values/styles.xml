@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources >
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar" >
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorSelected2</item>
+        <item name="android:textColor">@color/colorSelected2</item>
+        <item name="android:textColorPrimary">@color/colorSelected2</item>
+        <item name="android:datePickerDialogTheme">@style/MyDatePickerDialogTheme</item>
+        <item name="android:calendarTextColor">@color/colorSelected1</item>
+        <item name="android:actionMenuTextColor">@color/colorSelected2</item>
+        <item name="android:itemTextAppearance">@color/colorSelected2</item>
+        <item name="itemIconTint">@color/colorSelected2</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu</item>
+        <item name="android:editTextBackground">@color/colorSelected2</item>
+        <item name="android:buttonStyle">@style/ButtonColor_Default</item>
+        <item name="textColorSelected">@color/colorSelected2</item>
+        <item name="android:textSize">15sp</item>
+
+    </style>
+    <style name="PopupMenu" parent="@android:style/Widget.PopupMenu">
+        <item name="android:popupBackground">#000000</item>
+    </style>
+    <!--<item name="android:windowTitleBackgroundStyle">@color/colorSelected2</item>-->
+    <style name="MyDatePickerDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="CalenderViewWeekCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/white</item>
+
+    </style>
+    <style name="CalenderViewDateCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+
+
+    </style>
+    <style name="ButtonColor_Default" parent="@android:style/Widget.Button">
+        <item name="android:backgroundTint">@color/colorSelected2</item>
+    </style>
+
+
+    <style name="ListFont" parent="@android:style/Widget.ListView">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:padding">20dp</item>
+
+    </style>
+
+    <!--new themes-->
+    <style name="AppTheme_ColorBlue" parent="Theme.AppCompat.Light.DarkActionBar" >
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/blue</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textColorPrimary">@color/blue</item>
+        <item name="android:datePickerDialogTheme">@style/MyDatePickerDialogTheme</item>
+        <item name="android:calendarTextColor">@color/colorSelected1</item>
+        <item name="android:actionMenuTextColor">@color/blue</item>
+        <item name="android:itemTextAppearance">@color/blue</item>
+        <item name="itemIconTint">@color/blue</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu</item>
+        <item name="android:editTextBackground">@color/blue</item>
+        <item name="android:buttonStyle">@style/ButtonColor_Blue</item>
+        <item name="textColorSelected">@color/blue</item>
+    </style>
+    <style name="ButtonColor_Blue" parent="@android:style/Widget.Button">
+        <item name="android:backgroundTint">@color/blue</item>
+    </style>
+    <style name="AppTheme_ColorNavyBlue" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/navyBlue</item>
+        <item name="android:textColor">@color/navyBlue</item>
+        <item name="android:textColorPrimary">@color/navyBlue</item>
+        <item name="android:datePickerDialogTheme">@style/MyDatePickerDialogTheme</item>
+        <item name="android:calendarTextColor">@color/colorSelected1</item>
+        <item name="android:actionMenuTextColor">@color/navyBlue</item>
+        <item name="android:itemTextAppearance">@color/navyBlue</item>
+        <item name="itemIconTint">@color/navyBlue</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu</item>
+        <item name="android:editTextBackground">@color/navyBlue</item>
+        <item name="android:buttonStyle">@style/ButtonColor_NavyBlue</item>
+        <item name="textColorSelected">@color/navyBlue</item>
+    </style>
+    <style name="ButtonColor_NavyBlue" parent="@android:style/Widget.Button">
+        <item name="android:backgroundTint">@color/navyBlue</item>
+    </style>
+    <style name="AppTheme_ColorSkyBlue" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/skyBlue</item>
+        <item name="android:textColor">@color/skyBlue</item>
+        <item name="android:textColorPrimary">@color/skyBlue</item>
+        <item name="android:datePickerDialogTheme">@style/MyDatePickerDialogTheme</item>
+        <item name="android:calendarTextColor">@color/colorSelected1</item>
+        <item name="android:actionMenuTextColor">@color/skyBlue</item>
+        <item name="android:itemTextAppearance">@color/skyBlue</item>
+        <item name="itemIconTint">@color/skyBlue</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu</item>
+        <item name="android:editTextBackground">@color/skyBlue</item>
+        <item name="android:buttonStyle">@style/ButtonColor_SkyBlue</item>
+        <item name="textColorSelected">@color/skyBlue</item>
+    </style>
+    <style name="ButtonColor_SkyBlue" parent="@android:style/Widget.Button">
+        <item name="android:backgroundTint">@color/skyBlue</item>
+    </style>
+    <style name="AppTheme_ColorMaroon" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/maroon</item>
+        <item name="android:textColor">@color/maroon</item>
+        <item name="android:textColorPrimary">@color/maroon</item>
+        <item name="android:datePickerDialogTheme">@style/MyDatePickerDialogTheme</item>
+        <item name="android:calendarTextColor">@color/colorSelected1</item>
+        <item name="android:actionMenuTextColor">@color/maroon</item>
+        <item name="android:itemTextAppearance">@color/maroon</item>
+        <item name="itemIconTint">@color/maroon</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu</item>
+        <item name="android:editTextBackground">@color/maroon</item>
+        <item name="android:buttonStyle">@style/ButtonColor_Maroon</item>
+        <item name="textColorSelected">@color/maroon</item>
+    </style>
+    <style name="ButtonColor_Maroon" parent="@android:style/Widget.Button">
+        <item name="android:backgroundTint">@color/maroon</item>
+    </style>
+    <style name="AppTheme_ColorGreen" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/green</item>
+        <item name="android:textColor">@color/green</item>
+        <item name="android:textColorPrimary">@color/green</item>
+        <item name="android:datePickerDialogTheme">@style/MyDatePickerDialogTheme</item>
+        <item name="android:calendarTextColor">@color/colorSelected1</item>
+        <item name="android:actionMenuTextColor">@color/green</item>
+        <item name="android:itemTextAppearance">@color/green</item>
+        <item name="itemIconTint">@color/green</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu</item>
+        <item name="android:editTextBackground">@color/green</item>
+        <item name="android:buttonStyle">@style/ButtonColor_Green</item>
+        <item name="textColorSelected">@color/green</item>
+
+
+    </style>
+    <style name="ButtonColor_Green" parent="@android:style/Widget.Button">
+        <item name="android:backgroundTint">@color/green</item>
+    </style>
+    <style name="MyDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">#808080</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:labelTextSize">25sp</item>
+    </style>
+</resources>
