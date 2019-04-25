@@ -36,6 +36,7 @@ import com.example.myapplication.personal.AddTaskPersonalActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.theme.ChangeThemeActivity;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -94,7 +95,9 @@ public class PersonalActivity extends AppCompatActivity implements PopupMenu.OnM
                     /*long new_date = cv.getDate();
                     Toast.makeText(view.getContext(), "Year=" + year + " Month=" + month + " Day=" + dayOfMonth, Toast.LENGTH_LONG).show();
                 */
-                selected_date = dayOfMonth + "-" + (month + 1) + "-" + year;
+                month = month + 1;
+
+                selected_date = new DecimalFormat("00").format(dayOfMonth) + "-" + new DecimalFormat("00").format(month) + "-" + year;
                 Log.d("asha", "****************^^^^^^^^^^^^^^^^^^^^^^^^^^^^onCreate: position" + selected_date);
                 displayItems();
             }

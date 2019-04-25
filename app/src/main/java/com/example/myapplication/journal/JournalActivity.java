@@ -125,7 +125,7 @@ public class JournalActivity extends AppCompatActivity {
         listItems = dbHelper.getAllDataForDate(selected_date);
 
         //listItems = dbHelper.getAllData();
-        Log.d("hey", "%%%%%%%%%%%%%%%%%%%%%%%%%%%onResume: " + listItems.size());
+        //Log.d("hey", "%%%%%%%%%%%%%%%%%%%%%%%%%%%onResume: " + listItems.size());
         if (listItems != null && listItems.size()!=0) {
             ArrayList<CalendarRecord> final_array = new ArrayList<>();
             for(int i=0;i<listItems.size();i++){
