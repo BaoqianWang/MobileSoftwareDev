@@ -36,6 +36,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.myapplication.personal.PersonalActivity" />
         </activity>
+        <activity android:name=".personal.AddNewReminderPersonalActivity" android:windowSoftInputMode="stateHidden|adjustResize" android:label="Reminder Activity" android:parentActivityName=".personal.PersonalActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.myapplication.personal.PersonalActivity" />
+        </activity>
         <activity android:name=".journal.JournalActivity" android:windowSoftInputMode="stateHidden|adjustResize" android:label="Journal Activity" android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

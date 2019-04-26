@@ -1,6 +1,7 @@
 package com.example.myapplication.academic;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -20,7 +21,9 @@ import com.example.myapplication.R;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 public class AddNewReminderAcademicActivity extends AppCompatActivity {
@@ -189,11 +192,63 @@ public class AddNewReminderAcademicActivity extends AppCompatActivity {
         calendarRecord.setEvent_start_date(start_date.getText().toString());
         calendarRecord.setEvent_end_date(end_date.getText().toString());
         calendarRecord.setEvent_repeat(repeat_events);
-        boolean isInserted = dbHelper.insertData(calendarRecord);
+        /*boolean isInserted = dbHelper.insertData(calendarRecord);
+        if(isInserted == true)
+            Toast.makeText(this,"Data Inserted",Toast.LENGTH_LONG).show();
+        else
+            Toast.makeText(this,"Data not Inserted",Toast.LENGTH_LONG).show();*/
+        boolean isInserted = true;
+        Date sdate = null;
+        Date edate = null;
+        ArrayList<Integer> days_selected = new ArrayList<Integer>();
+        for(int i=0;i<calendarRecord.getEvent_repeat().length();i++){
+            if(calendarRecord.getEvent_repeat().charAt(i) == 'M'){
+                days_selected.add(2);
+            }
+            if(calendarRecord.getEvent_repeat().charAt(i) == 'T'){
+                days_selected.add(3);
+            }
+            if(calendarRecord.getEvent_repeat().charAt(i) == 'W'){
+                days_selected.add(4);
+            }
+            if(calendarRecord.getEvent_repeat().charAt(i) == 'R'){
+                days_selected.add(5);
+            }
+            if(calendarRecord.getEvent_repeat().charAt(i) == 'F'){
+                days_selected.add(6);
+            }
+            if(calendarRecord.getEvent_repeat().charAt(i) == 'S'){
+                days_selected.add(7);
+            }
+        }
+
+        try {
+            SimpleDateFormat sm = new SimpleDateFormat("dd-MM-yyyy");
+            sdate = new SimpleDateFormat("dd-MM-yyyy").parse(start_date.getText().toString());
+            edate = new SimpleDateFormat("dd-MM-yyyy").parse(end_date.getText().toString());
+            Calendar c = Calendar.getInstance();
+            c.setTime(sdate);
+            sdate = c.getTime();
+
+            while(sdate.compareTo(edate)<=0){
+                if(days_selected.contains(c.get(Calendar.DAY_OF_WEEK))) {
+                    calendarRecord.setEvent_start_date(sm.format(sdate));
+                    isInserted = dbHelper.insertData(calendarRecord);
+
+                }
+                c.add(Calendar.DATE, 1);
+                sdate = c.getTime();
+            }
+        }catch (Exception e){
+            Log.d("", "addClass: null pointer");
+        }
+
         if(isInserted == true)
             Toast.makeText(this,"Data Inserted",Toast.LENGTH_LONG).show();
         else
             Toast.makeText(this,"Data not Inserted",Toast.LENGTH_LONG).show();
+        Intent i = new Intent(getApplicationContext(), AcademicActivity.class);
+        startActivity(i);
     }
 
 }

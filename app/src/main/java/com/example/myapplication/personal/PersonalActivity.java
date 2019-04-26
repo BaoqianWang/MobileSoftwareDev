@@ -29,6 +29,7 @@ import com.example.myapplication.academic.AcademicActivity;
 import com.example.myapplication.academic.AddAssignmentActivity;
 import com.example.myapplication.academic.AddClassAcademicActivity;
 import com.example.myapplication.academic.AddExamActivity;
+import com.example.myapplication.academic.AddNewReminderAcademicActivity;
 import com.example.myapplication.academic.AddReminderAcademicActivity;
 import com.example.myapplication.journal.JournalActivity;
 import com.example.myapplication.personal.AddGoalPersonalActivity;
@@ -161,7 +162,7 @@ public class PersonalActivity extends AppCompatActivity implements PopupMenu.OnM
                 return true;
             case R.id.add_reminder:
                 i = null;
-                i = new Intent(getApplicationContext(), AddExamActivity.class);
+                i = new Intent(getApplicationContext(), AddNewReminderPersonalActivity.class);
                 startActivity(i);
                 return true;
             default:

@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.myapplication.CalendarRecord;
 import com.example.myapplication.DBHelper;
 import com.example.myapplication.R;
+import com.example.myapplication.theme.ChangeThemeActivity;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -120,5 +121,7 @@ public class AddAssignmentActivity extends AppCompatActivity {
             Toast.makeText(this,"Data Inserted",Toast.LENGTH_LONG).show();
         else
             Toast.makeText(this,"Data not Inserted",Toast.LENGTH_LONG).show();
+        Intent i = new Intent(getApplicationContext(), AcademicActivity.class);
+        startActivity(i);
     }
 }

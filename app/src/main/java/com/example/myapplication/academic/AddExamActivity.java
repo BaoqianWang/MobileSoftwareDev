@@ -120,5 +120,7 @@ public class AddExamActivity extends AppCompatActivity {
             Toast.makeText(this,"Data Inserted",Toast.LENGTH_LONG).show();
         else
             Toast.makeText(this,"Data not Inserted",Toast.LENGTH_LONG).show();
+        Intent i = new Intent(getApplicationContext(), AcademicActivity.class);
+        startActivity(i);
     }
 }

@@ -192,27 +192,7 @@ public class AddTaskPersonalActivity extends AppCompatActivity {
         boolean isInserted = true;
         Date sdate = null;
         Date edate = null;
-        ArrayList<Integer> days_selected = new ArrayList<Integer>();
-        for(int i=0;i<calendarRecord.getEvent_repeat().length();i++){
-            if(calendarRecord.getEvent_repeat().charAt(i) == 'M'){
-                days_selected.add(2);
-            }
-            if(calendarRecord.getEvent_repeat().charAt(i) == 'T'){
-                days_selected.add(3);
-            }
-            if(calendarRecord.getEvent_repeat().charAt(i) == 'W'){
-                days_selected.add(4);
-            }
-            if(calendarRecord.getEvent_repeat().charAt(i) == 'R'){
-                days_selected.add(5);
-            }
-            if(calendarRecord.getEvent_repeat().charAt(i) == 'F'){
-                days_selected.add(6);
-            }
-            if(calendarRecord.getEvent_repeat().charAt(i) == 'S'){
-                days_selected.add(7);
-            }
-        }
+
 
         try {
             SimpleDateFormat sm = new SimpleDateFormat("dd-MM-yyyy");
@@ -223,11 +203,11 @@ public class AddTaskPersonalActivity extends AppCompatActivity {
             sdate = c.getTime();
 
             while(sdate.compareTo(edate)<=0){
-                if(days_selected.contains(c.get(Calendar.DAY_OF_WEEK))) {
+
                     calendarRecord.setEvent_start_date(sm.format(sdate));
                     isInserted = dbHelper.insertData(calendarRecord);
 
-                }
+
                 c.add(Calendar.DATE, 1);
                 sdate = c.getTime();
             }
@@ -239,5 +219,7 @@ public class AddTaskPersonalActivity extends AppCompatActivity {
             Toast.makeText(this,"Data Inserted",Toast.LENGTH_LONG).show();
         else
             Toast.makeText(this,"Data not Inserted",Toast.LENGTH_LONG).show();
+        Intent i = new Intent(getApplicationContext(), PersonalActivity.class);
+        startActivity(i);
     }
 }

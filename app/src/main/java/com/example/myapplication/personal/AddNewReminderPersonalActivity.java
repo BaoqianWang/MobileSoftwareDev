@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -18,7 +19,6 @@ import com.example.myapplication.CalendarRecord;
 import com.example.myapplication.DBHelper;
 import com.example.myapplication.R;
 import com.example.myapplication.academic.AcademicActivity;
-import com.example.myapplication.academic.AddNewReminderAcademicActivity;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -27,9 +27,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class AddGoalPersonalActivity extends AppCompatActivity {
-    private int mYear,mMonth,mDay;
+public class AddNewReminderPersonalActivity extends AppCompatActivity {
 
+    private int mYear,mMonth,mDay;
     SharedPreferences preferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class AddGoalPersonalActivity extends AppCompatActivity {
         Log.d("info", "**************************####*****************onCreate: " + R.style.AppTheme);
         setTheme(preferences.getInt("theme",0));
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addgoal_personal);
+        setContentView(R.layout.activity_add_new_reminder_academic);
 
         final Button pickDate = findViewById(R.id.pick_date);
         final TextView textView = findViewById(R.id.date);
@@ -73,7 +73,7 @@ public class AddGoalPersonalActivity extends AppCompatActivity {
                 mDay = c.get(Calendar.DAY_OF_MONTH);
 
                 // Launch Date Picker Dialog
-                DatePickerDialog dpd = new DatePickerDialog(AddGoalPersonalActivity.this,
+                DatePickerDialog dpd = new DatePickerDialog(AddNewReminderPersonalActivity.this,
                         new DatePickerDialog.OnDateSetListener() {
 
                             @Override
@@ -101,7 +101,7 @@ public class AddGoalPersonalActivity extends AppCompatActivity {
             }
         });
 
-        /*for end date*/
+        /*888888888888888888888888888888*/
         {
             final Button pickDate2 = findViewById(R.id.pick_date2);
             final TextView textView2 = findViewById(R.id.date2);
@@ -136,7 +136,7 @@ public class AddGoalPersonalActivity extends AppCompatActivity {
                     mDay = c.get(Calendar.DAY_OF_MONTH);
 
                     // Launch Date Picker Dialog
-                    DatePickerDialog dpd = new DatePickerDialog(AddGoalPersonalActivity.this,
+                    DatePickerDialog dpd = new DatePickerDialog(AddNewReminderPersonalActivity.this,
                             new DatePickerDialog.OnDateSetListener() {
 
                                 @Override
@@ -164,36 +164,64 @@ public class AddGoalPersonalActivity extends AppCompatActivity {
                 }
             });
         }
-        /*or end date*/
+        /*88888888888888888888888888888*/
         this.setTitle("");
     }
-    public void launchAddNewReminder(View v){
-        Intent i = new Intent(getApplicationContext(), AddNewReminderAcademicActivity.class);
-        startActivity(i);
-    }
 
-    public void addGoal(View view) {
+    public void addReminder(View view) {
         EditText subject = (EditText) findViewById(R.id.textView2);
         TextView start_date = (TextView) findViewById(R.id.date);
         TextView end_date = (TextView) findViewById(R.id.date2);
+        CheckBox monday = (CheckBox)findViewById(R.id.monday);
+        CheckBox tuesday = (CheckBox)findViewById(R.id.tuesday);
+        CheckBox wednesday = (CheckBox)findViewById(R.id.wednesday);
+        CheckBox thursday = (CheckBox)findViewById(R.id.thursday);
+        CheckBox friday = (CheckBox)findViewById(R.id.friday);
+        CheckBox saturday = (CheckBox)findViewById(R.id.saturday);
+        String repeat_events = "";
+        if(monday.isChecked()) repeat_events = repeat_events + "M";
+        if(tuesday.isChecked()) repeat_events = repeat_events + "T";
+        if(wednesday.isChecked()) repeat_events = repeat_events + "W";
+        if(thursday.isChecked()) repeat_events = repeat_events + "R";
+        if(friday.isChecked()) repeat_events = repeat_events + "F";
+        if(saturday.isChecked()) repeat_events = repeat_events + "S";
         CalendarRecord calendarRecord = new CalendarRecord();
         DBHelper dbHelper = new DBHelper(this);
         calendarRecord.setCalendar_type("Personal");
-        calendarRecord.setEvent_type("Goal");
-        calendarRecord.setEvent_name(subject.getText().toString());
-        calendarRecord.setEvent_start_date(start_date.getText().toString());
-
-
-        String repeat_events = "MTWRFS ";
+        calendarRecord.setEvent_type("Reminder");
         calendarRecord.setEvent_name(subject.getText().toString());
         calendarRecord.setEvent_start_date(start_date.getText().toString());
         calendarRecord.setEvent_end_date(end_date.getText().toString());
         calendarRecord.setEvent_repeat(repeat_events);
-
+        /*boolean isInserted = dbHelper.insertData(calendarRecord);
+        if(isInserted == true)
+            Toast.makeText(this,"Data Inserted",Toast.LENGTH_LONG).show();
+        else
+            Toast.makeText(this,"Data not Inserted",Toast.LENGTH_LONG).show();*/
         boolean isInserted = true;
         Date sdate = null;
         Date edate = null;
-
+        ArrayList<Integer> days_selected = new ArrayList<Integer>();
+        for(int i=0;i<calendarRecord.getEvent_repeat().length();i++){
+            if(calendarRecord.getEvent_repeat().charAt(i) == 'M'){
+                days_selected.add(2);
+            }
+            if(calendarRecord.getEvent_repeat().charAt(i) == 'T'){
+                days_selected.add(3);
+            }
+            if(calendarRecord.getEvent_repeat().charAt(i) == 'W'){
+                days_selected.add(4);
+            }
+            if(calendarRecord.getEvent_repeat().charAt(i) == 'R'){
+                days_selected.add(5);
+            }
+            if(calendarRecord.getEvent_repeat().charAt(i) == 'F'){
+                days_selected.add(6);
+            }
+            if(calendarRecord.getEvent_repeat().charAt(i) == 'S'){
+                days_selected.add(7);
+            }
+        }
 
         try {
             SimpleDateFormat sm = new SimpleDateFormat("dd-MM-yyyy");
@@ -204,11 +232,11 @@ public class AddGoalPersonalActivity extends AppCompatActivity {
             sdate = c.getTime();
 
             while(sdate.compareTo(edate)<=0){
-
+                if(days_selected.contains(c.get(Calendar.DAY_OF_WEEK))) {
                     calendarRecord.setEvent_start_date(sm.format(sdate));
                     isInserted = dbHelper.insertData(calendarRecord);
 
-
+                }
                 c.add(Calendar.DATE, 1);
                 sdate = c.getTime();
             }

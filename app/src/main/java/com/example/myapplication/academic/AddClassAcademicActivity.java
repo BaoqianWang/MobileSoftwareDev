@@ -1,6 +1,7 @@
 package com.example.myapplication.academic;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -246,5 +247,7 @@ public class AddClassAcademicActivity extends AppCompatActivity {
             Toast.makeText(this,"Data Inserted",Toast.LENGTH_LONG).show();
         else
             Toast.makeText(this,"Data not Inserted",Toast.LENGTH_LONG).show();
+        Intent i = new Intent(getApplicationContext(), AcademicActivity.class);
+        startActivity(i);
     }
 }
