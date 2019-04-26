@@ -26,6 +26,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.myapplication.MainActivity" />
         </activity>
+        <activity android:name=".ViewActivity" android:label="View Activity" android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.myapplication.MainActivity" />
+        </activity>
         <activity android:name=".personal.PersonalActivity" android:windowSoftInputMode="stateHidden|adjustResize" android:label="Personal Activity" android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

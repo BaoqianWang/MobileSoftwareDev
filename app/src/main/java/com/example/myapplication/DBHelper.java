@@ -83,6 +83,7 @@ public class DBHelper extends SQLiteOpenHelper {
             calendarRecord.setEvent_start_date(res.getString(4));
             calendarRecord.setEvent_end_date(res.getString(5));
             calendarRecord.setEvent_repeat(res.getString(6));
+            calendarRecord.setEvent_time(res.getString(7));
             records.add(calendarRecord);
         }
 

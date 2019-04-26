@@ -182,6 +182,7 @@ public class AddClassAcademicActivity extends AppCompatActivity {
         CheckBox friday = (CheckBox)findViewById(R.id.friday);
         CheckBox saturday = (CheckBox)findViewById(R.id.saturday);
         String repeat_events = "";
+        EditText time = (EditText)findViewById(R.id.time2);
         if(monday.isChecked()) repeat_events = repeat_events + "M";
         if(tuesday.isChecked()) repeat_events = repeat_events + "T";
         if(wednesday.isChecked()) repeat_events = repeat_events + "W";
@@ -196,6 +197,7 @@ public class AddClassAcademicActivity extends AppCompatActivity {
         calendarRecord.setEvent_start_date(start_date.getText().toString());
         calendarRecord.setEvent_end_date(end_date.getText().toString());
         calendarRecord.setEvent_repeat(repeat_events);
+        calendarRecord.setEvent_time(time.getText().toString());
 
         boolean isInserted = true;
         Date sdate = null;

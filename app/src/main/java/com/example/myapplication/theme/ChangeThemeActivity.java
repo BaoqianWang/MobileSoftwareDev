@@ -139,4 +139,17 @@ public class ChangeThemeActivity extends AppCompatActivity {
         this.startActivity(i);
         //call on create where new theme is applied
     }
+
+    public void OnClickButtonDefault(View view) {
+        edit_preferences = preferences.edit();
+        edit_preferences.putInt("theme" , R.style.AppTheme);
+        edit_preferences.commit();
+        Intent i = getIntent();
+        this.overridePendingTransition(0, 0);
+        i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        this.finish();
+        //restart the activity without animation
+        this.overridePendingTransition(0, 0);
+        this.startActivity(i);
+    }
 }

@@ -180,11 +180,18 @@ public class PersonalActivity extends AppCompatActivity implements PopupMenu.OnM
 
 
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(PersonalActivity.this,R.style.MyDialogTheme);
-            alertDialogBuilder.setMessage(listItems.get(arg2).getCalendar_type() + " : " + listItems.get(arg2).getEvent_name() +
-                    "\n" + "Start Date : " + listItems.get(arg2).getEvent_start_date() +
-                    "\n" + "End Date : " + listItems.get(arg2).getEvent_end_date() +
-                    "\n" + "Repeats : " + listItems.get(arg2).getEvent_name()
-            );
+            if(listItems.get(arg2).getEvent_type().equalsIgnoreCase("goal")) {
+                alertDialogBuilder.setMessage(listItems.get(arg2).getEvent_type() + " : " + listItems.get(arg2).getEvent_name() +
+                        "\n" + "Start Date : " + listItems.get(arg2).getEvent_start_date() +
+                        "\n" + "End Date : " + listItems.get(arg2).getEvent_end_date() +
+                        "\n" + "Repeats : " + listItems.get(arg2).getEvent_repeat()
+                );
+            } else {
+                alertDialogBuilder.setMessage(listItems.get(arg2).getEvent_type() + " : " + listItems.get(arg2).getEvent_name() +
+                        "\n" + "Start Date : " + listItems.get(arg2).getEvent_start_date() +
+                        "\n" + "End Date : " + listItems.get(arg2).getEvent_end_date()
+                );
+            }
             alertDialogBuilder.setPositiveButton("OK",
                     new DialogInterface.OnClickListener() {
                         @Override
@@ -196,6 +203,8 @@ public class PersonalActivity extends AppCompatActivity implements PopupMenu.OnM
             AlertDialog alertDialog = alertDialogBuilder.create();
 
             alertDialog.show();
+            TextView textView = (TextView) alertDialog.findViewById(android.R.id.message);
+            textView.setTextSize(25);
 
         }
     };

@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CalendarView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
@@ -28,6 +29,7 @@ import android.widget.Toast;
 import com.example.myapplication.CalendarRecord;
 import com.example.myapplication.DBHelper;
 import com.example.myapplication.R;
+import com.example.myapplication.ViewActivity;
 import com.example.myapplication.academic.AcademicActivity;
 import com.example.myapplication.journal.JournalActivity;
 import com.example.myapplication.personal.PersonalActivity;
@@ -107,6 +109,7 @@ public class JournalActivity extends AppCompatActivity {
     }
 
     public void addNote(View view) {
+
         Intent i = new Intent(JournalActivity.this, AddNoteActivity.class);
         i.putExtra("selected_date", selected_date);
         startActivity(i);
@@ -194,7 +197,7 @@ public class JournalActivity extends AppCompatActivity {
         @Override
         public void onItemClick(AdapterView < ? > arg0, View arg1, int arg2, long arg3) {
 
-            String info = ((TextView) arg1).getText().toString();
+            /*String info = ((TextView) arg1).getText().toString();
             Toast.makeText(getBaseContext(), "Item " + info, Toast.LENGTH_LONG).show();
             int theme = preferences.getInt("theme", 0);
 
@@ -211,8 +214,12 @@ public class JournalActivity extends AppCompatActivity {
 
             AlertDialog alertDialog = alertDialogBuilder.create();
 
-            alertDialog.show();
+            alertDialog.show();*/
 
+            Intent i = new Intent(JournalActivity.this, ViewActivity.class);
+            i.putExtra("Content", "Name : " + listItems.get(arg2).getEvent_name()
+                    + "\n \n" + listItems.get(arg2).getEvent_end_date());
+            startActivity(i);
         }
     };
 }
