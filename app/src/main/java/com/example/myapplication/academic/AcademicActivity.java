@@ -162,7 +162,7 @@ public class AcademicActivity extends AppCompatActivity implements PopupMenu.OnM
         public void onItemClick(AdapterView < ? > arg0, View arg1, int arg2, long arg3) {
 
             String info = ((TextView) arg1).getText().toString();
-            Toast.makeText(getBaseContext(), "Item " + info, Toast.LENGTH_LONG).show();
+           // Toast.makeText(getBaseContext(), "Item " + info, Toast.LENGTH_LONG).show();
             int theme = preferences.getInt("theme", 0);
 
 
