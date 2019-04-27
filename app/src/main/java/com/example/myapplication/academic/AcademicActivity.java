@@ -259,6 +259,13 @@ public class AcademicActivity extends AppCompatActivity implements PopupMenu.OnM
         displayItems();
         super.onResume();
     }
+    @Override
+    public void onRestart()
+    {
+        super.onRestart();
+        finish();
+        startActivity(getIntent());
+    }
     public void displayItems() {
         DBHelper dbHelper = new DBHelper(this);
         listItems = dbHelper.getAllDataForDate(selected_date);

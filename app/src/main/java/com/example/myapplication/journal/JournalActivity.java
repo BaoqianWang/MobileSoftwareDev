@@ -193,6 +193,13 @@ public class JournalActivity extends AppCompatActivity {
             }
         }
     }
+    @Override
+    public void onRestart()
+    {
+        super.onRestart();
+        finish();
+        startActivity(getIntent());
+    }
     private AdapterView.OnItemClickListener listPairedClickItem = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView < ? > arg0, View arg1, int arg2, long arg3) {

@@ -34,6 +34,7 @@ public class ViewActivity extends AppCompatActivity {
         TextView text_view = (TextView)findViewById(R.id.textView);
 
         text_view.setText(content);
+        this.setTitle("");
     }
 
     public void back(View view) {
