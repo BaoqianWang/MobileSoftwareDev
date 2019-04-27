@@ -21,6 +21,7 @@ public class ViewActivity extends AppCompatActivity {
     private static final String LOG_TAG =
             MainActivity.class.getSimpleName();
     DBHelper dbHelper;
+    String content;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -30,7 +31,7 @@ public class ViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view);
 
-        String content = getIntent().getExtras().getString("Content");
+        content = getIntent().getExtras().getString("Content");
         TextView text_view = (TextView)findViewById(R.id.textView);
 
         text_view.setText(content);
@@ -38,6 +39,15 @@ public class ViewActivity extends AppCompatActivity {
     }
 
     public void back(View view) {
+        Intent i = new Intent(getApplicationContext(), JournalActivity.class);
+        startActivity(i);
+    }
+
+    public void delete(View view) {
+        String parts[] = content.split(" ", 4);
+        parts[2].trim();
+        DBHelper dbHelper = new DBHelper(this);
+        dbHelper.deleteRecord(parts[2].trim());
         Intent i = new Intent(getApplicationContext(), JournalActivity.class);
         startActivity(i);
     }

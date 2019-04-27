@@ -140,5 +140,12 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         return db.delete(TABLE_NAME, "_id = ?",new String[] {id});
     }
+    public void deleteRecord (String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_NAME+ " WHERE "+COL_4+"='"+id+"'");
+        Log.d("del", "***************DELETE FROM " + TABLE_NAME+ " WHERE "+COL_4+"='"+id+"'");
+        db.close();
+    }
+
 
 }

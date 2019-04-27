@@ -56,6 +56,7 @@ public class AcademicActivity extends AppCompatActivity implements PopupMenu.OnM
 
     SharedPreferences preferences;
     String selected_date;
+    CalendarRecord current_calendar_record;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -167,6 +168,7 @@ public class AcademicActivity extends AppCompatActivity implements PopupMenu.OnM
 
 
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(AcademicActivity.this,R.style.MyDialogTheme);
+            current_calendar_record = listItems.get(arg2);
             if(listItems.get(arg2).getEvent_type().equalsIgnoreCase("Assignment")){
                 alertDialogBuilder.setMessage(listItems.get(arg2).getCalendar_type() + " : " + listItems.get(arg2).getEvent_name() +
                         "\n" + "Start Date : " + listItems.get(arg2).getEvent_start_date() +
@@ -201,11 +203,19 @@ public class AcademicActivity extends AppCompatActivity implements PopupMenu.OnM
                             arg0.cancel();
                         }
                     });
+            alertDialogBuilder.setNegativeButton("DELETE",
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            deleteRecord(current_calendar_record);
+                        }
+                    });
 
             AlertDialog alertDialog = alertDialogBuilder.create();
 
             alertDialog.show();
             alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextSize(TypedValue.COMPLEX_UNIT_SP, 25.0f);
+            alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextSize(TypedValue.COMPLEX_UNIT_SP, 25.0f);
             TextView textView = (TextView) alertDialog.findViewById(android.R.id.message);
             textView.setTextSize(25);
 
@@ -332,5 +342,10 @@ public class AcademicActivity extends AppCompatActivity implements PopupMenu.OnM
                 list.setAdapter(adapter);
             }
         }
+    }
+    public void deleteRecord(CalendarRecord current_calendar_record){
+        DBHelper dbHelper = new DBHelper(this);
+        dbHelper.deleteRecord(current_calendar_record.getEvent_name());
+        this.recreate();
     }
 }
